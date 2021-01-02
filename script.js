@@ -49,6 +49,18 @@ function generatePassword() {
       charOptions.push(k);
     }
   }
+
+  // If didn't pick any options, alert user and return.
+  if (!(specialChar || num || upper || lower)) {
+    alert("You didn't pick anything");
+    return pass;
+  } else {
+    // Add characters to password randomly.
+    for (let l = 0; l < passLength; l++) {
+      pass += String.fromCharCode(charOptions[Math.floor(Math.random() * charOptions.length)]);
+    }
+  }
+  return pass;
 }
 
 // Add event listener to generate button
