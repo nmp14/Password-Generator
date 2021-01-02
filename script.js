@@ -11,11 +11,19 @@ function writePassword() {
 }
 
 function generatePassword() {
-  let passLength = prompt("Choose password length (8 to 128 characters)");
+  let passLength = undefined;
+  do {
+    passLength = prompt("Choose password length (8 to 128 characters)");
+  }
+  while (passLength < 8 || passLength > 128);
+
   let lower = confirm("Do you want lowercase letters?");
   let upper = confirm("Do you want uppercase letters?");
   let num = confirm("Do you want numbers?");
   let specialChar = confirm("Do you want to include special characters?");
+  let pass = "";
+  let charOptions = [];
+
 
 }
 
