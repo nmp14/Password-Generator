@@ -15,7 +15,8 @@ function generatePassword() {
   do {
     passLength = prompt("Choose password length (8 to 128 characters)");
   }
-  while (passLength < 8 || passLength > 128);
+  while (passLength < 8 || passLength > 128 || !Number.isInteger(parseInt(passLength))
+  );
 
   let lower = confirm("Do you want lowercase letters?");
   let upper = confirm("Do you want uppercase letters?");
